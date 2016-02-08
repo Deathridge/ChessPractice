@@ -1,11 +1,12 @@
-#pragma once
 class Piece {
 public:
-	Piece(char[] position, char[] type);
-	char& position[](int id);
-	char& type[](int id);
+	Piece(char * position, char * type);
+	Piece();
+	~Piece();
+	char* getPosition();
+	char* getType();
+	void movePiece(char* position);
 private:
-	int id;
 	char* position;
 	char* type;
 };
