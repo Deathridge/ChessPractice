@@ -14,9 +14,13 @@ int main()
 	Board* b = new Board();
 
 	for (auto x = 0; x != 8; ++x)
-		for (auto y = 0; y != 8; ++y)
+	{
+		for (auto y = 0; y != 8; ++y) {
 			std::cout << b->getSquare(x, y)->getColour();
-
+		}
+		std::cout << "\n";
+	}
+		
     return 0;
 }
 
