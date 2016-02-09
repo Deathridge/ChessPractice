@@ -1,35 +1,35 @@
 #include "stdafx.h"
 #include "Piece.h"
 
-Piece::Piece(char* position, char* type)
-	:position{ position }, type{ type }
+Piece::Piece(char* type,char* colour)
+	:type{ type }, colour{colour}
 {
 
 }
 
 Piece::Piece()
-	:position{nullptr}, type{nullptr}
+	: type{nullptr}, colour{nullptr}
 {
 
 }
 
 Piece::~Piece()
 {
-	position = nullptr;
+	
 	type = nullptr;
+	colour = nullptr;
 }
 
-char* Piece::getPosition()
-{
-	return position;
-}
+
 
 char* Piece::getType()
 {
 	return type;
 }
 
-void Piece::movePiece(char* pos)
+char* Piece::getColour()
 {
-	position = pos;
+	return colour;
 }
+
+

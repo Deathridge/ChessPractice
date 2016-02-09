@@ -1,12 +1,63 @@
+
 class Piece {
 public:
-	Piece(char * position, char * type);
+	Piece(char* type, char* colour);
 	Piece();
-	~Piece();
-	char* getPosition();
+	~Piece();	
 	char* getType();
-	void movePiece(char* position);
+	char* getColour();	
+	
 private:
-	char* position;
+	
 	char* type;
+	char* colour;
+};
+
+//Create inheriting class Pawn from Piece class
+class Pawn : public Piece
+{
+public:
+	Pawn(char* colour)
+		:Piece("Pawn", colour)
+	{}	
+};
+
+class King : public Piece
+{
+public:
+	King(char* colour)
+		:Piece("King", colour)
+	{}
+};
+
+class Queen : public Piece
+{
+public:
+	Queen(char* colour)
+		:Piece("Queen", colour)
+	{}
+};
+
+class Knight : public Piece
+{
+public:
+	Knight(char* colour)
+		:Piece("Knight", colour)
+	{}
+};
+
+class Rook : public Piece
+{
+public:
+	Rook(char* colour)
+		:Piece("Rook", colour)
+	{}
+};
+
+class Bishop : public Piece
+{
+public:
+	Bishop(char* colour)
+		:Piece("Bishop", colour)
+	{}
 };

@@ -2,14 +2,14 @@
 #include "Square.h"
 #include "Piece.h"
 
-Square::Square(char* coordX, char* coordY, Piece* piece, Colour colour)
+Square::Square(int coordX, int coordY, Piece* piece, Colour colour)
 	:coorX{ coordX }, coorY{ coordY }, currentPiece{piece}, squareColour{colour}
 {
 	
 }
 
 Square::Square()
-	:coorX{ nullptr }, coorY{ nullptr }, currentPiece{ nullptr }, squareColour{ White }
+	:coorX{ NULL }, coorY{ NULL }, currentPiece{ nullptr }, squareColour{ White }
 {
 
 }
@@ -17,8 +17,6 @@ Square::Square()
 Square::~Square()
 {
 	delete currentPiece;
-	delete coorX;
-	delete coorY;
 }
 
 Colour Square::getColour()
@@ -26,16 +24,19 @@ Colour Square::getColour()
 	return squareColour;
 }
 
-char* Square::getCoorX() 
+int Square::getCoorX() 
 {
 	return coorX;
 }
-char* Square::getCoorY()
+int Square::getCoorY()
 {
 	return coorY;
 }
 
 Piece* Square::getPiece()
 {
-	return currentPiece;
+	if (currentPiece)
+		return currentPiece;
+	else
+		return new Piece("Empty", "White");
 }
