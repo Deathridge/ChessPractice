@@ -14,6 +14,13 @@ Square::Square()
 
 }
 
+Square::~Square()
+{
+	delete currentPiece;
+	delete coorX;
+	delete coorY;
+}
+
 Colour Square::getColour()
 {
 	return squareColour;

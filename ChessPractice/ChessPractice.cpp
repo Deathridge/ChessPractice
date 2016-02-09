@@ -16,7 +16,8 @@ int main()
 	for (auto x = 0; x != 8; ++x)
 	{
 		for (auto y = 0; y != 8; ++y) {
-			std::cout << b->getSquare(x, y)->getColour();
+			std::cout << b->getSquare(x, y)->getCoorX();
+			std::cout << b->getSquare(x, y)->getCoorY();
 		}
 		std::cout << "\n";
 	}
